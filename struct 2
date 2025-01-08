@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+struct Employee input();
+//Defining Structure for Employee details
+struct Employee
+{
+    int id;
+    float salary;
+    char name[20];
+};
+
+//Taking Input The Details Of Employee
+struct Employee input()
+{
+   struct Employee e;
+   printf("Enter Employee Name Salary And Id :- ");
+   fgets(e.name,20,stdin);
+   scanf("%d",&e.id);
+   scanf("%f",&e.salary);
+   getchar();
+   return e;
+}
+int main()
+{
+    struct Employee e1;
+    e1 = input();
+    struct Employee *ptr;
+    ptr = &e1;
+    printf("Name = %s",ptr->name);
+}
